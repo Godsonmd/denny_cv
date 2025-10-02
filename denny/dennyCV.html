@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.A Denny - Professional Curriculum Vitae</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-30px, -30px) scale(1.1); }
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-pic-container {
+            flex-shrink: 0;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, 0.3);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-placeholder {
+            color: white;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .title {
+            font-size: 1.4em;
+            opacity: 0.95;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95em;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 50px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                transform: translateY(20px);
+            }
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #1e3c72;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #667eea;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background: #764ba2;
+        }
+
+        /* Objective Section */
+        .objective-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            line-height: 1.9;
+            font-size: 1.05em;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .experience-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1em;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Experience Table */
+        .experience-table-container {
+            overflow-x: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        .experience-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .experience-table th {
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95em;
+            letter-spacing: 0.5px;
+        }
+
+        .experience-table td {
+            padding: 18px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .experience-table tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        .experience-table tbody tr:hover {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            transform: translateX(5px);
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.1);
+        }
+
+        /* Responsibilities Section */
+        .responsibility-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .responsibility-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+        }
+
+        .job-title {
+            font-size: 1.3em;
+            color: #1e3c72;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .job-title::before {
+            content: '●';
+            color: #667eea;
+            font-size: 1.5em;
+        }
+
+        .responsibility-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .responsibility-list li {
+            padding: 10px 0 10px 35px;
+            position: relative;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .responsibility-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* Education Section */
+        .education-table-container {
+            overflow-x: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .qualification-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        .qualification-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .qualification-table th {
+            padding: 18px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .qualification-table td {
+            padding: 18px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .qualification-table tbody tr:hover {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .licenses-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .licenses-box h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        /* Certificates Section */
+        .certificates-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .certificates-list li {
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            position: relative;
+            padding-left: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .certificates-list li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.15);
+        }
+
+        .certificates-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 20px;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        /* Personal Details */
+        .personal-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .detail-item {
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .detail-label {
+            font-weight: 700;
+            color: #1e3c72;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-value {
+            color: #555;
+            font-size: 1em;
+        }
+
+        /* Declaration */
+        .declaration-box {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(30, 60, 114, 0.3);
+        }
+
+        .declaration-box p {
+            line-height: 1.9;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+
+        .signature-section {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: left;
+        }
+
+        .signature-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .main-content {
+                padding: 35px;
+            }
+
+            .name {
+                font-size: 2.5em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .header {
+                padding: 40px 25px;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+
+            .name {
+                font-size: 2em;
+            }
+
+            .title {
+                font-size: 1.1em;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                padding: 25px;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            .personal-details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 30px 20px;
+            }
+
+            .name {
+                font-size: 1.8em;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .section {
+                margin-bottom: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="profile-section">
+                <div class="profile-pic-container">
+                    <div class="profile-pic">
+                        <div class="profile-placeholder">
+                            <img src="/denny/denny_img.jpg" alt="Denny M.A Photo">
+                        </div>
+                    </div>
+                </div>
+                <div class="header-info">
+                    <h1 class="name">M.A DENNY</h1>
+                    <div class="title">Heavy Equipment & Automobile Mechanic</div>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>Mangan House, P.O.Kandassankadavu, Karamuck, Thrissur, Kerala-680613, India</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>dennyma_mangan@yahoo.com<br>dennymangananthony1@gmail.com</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div>+91-9605514761<br>+91-9744971893</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Objective Section -->
+            <section class="section">
+                <h2 class="section-title">Objective</h2>
+                <div class="objective-box">
+                    Seeking to handle increasing responsibility and challenging assignments to harness my technical skill knowledge and achieve recognition. I want to be part of an environment that promotes team effort and provide opportunity for value based growth as well as career advancement while making a significant contribution to employer organization.
+                </div>
+                <div class="experience-highlight">
+                    ⭐ TOTAL 24 YEARS EXPERIENCE IN MIDDLE EAST AND INDIA AS HEAVY EQUIPMENT MECHANIC AND AUTOMOBILE MECHANIC 
+                </div>
+            </section>
+
+            <!-- Work Experience Section -->
+            <section class="section">
+                <h2 class="section-title">Work Experience</h2>
+                <div class="experience-table-container">
+                    <table class="experience-table">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Company</th>
+                                <th>Job Description</th>
+                                <th>Experience</th>
+                                <th>From</th>
+                                <th>To</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Kuwait Resources House (KRH) Kuwait</td>
+                                <td>Heavy Equipment Mechanic in Camp Arifian Kuwait, APS-5 Project</td>
+                                <td>5 Years Continuing</td>
+                                <td>Oct 2018</td>
+                                <td>Till Date</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>MAR Auto Garage India</td>
+                                <td>Mechanic Supervisor</td>
+                                <td>2.5 Years</td>
+                                <td>May 2016</td>
+                                <td>Oct 2018</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>General Dynamic Information Technology (GDIT) Through ASMACS</td>
+                                <td>Heavy Equipment Mechanic for US Army Project, Arifian</td>
+                                <td>5 Years</td>
+                                <td>Feb 2011</td>
+                                <td>Feb 2016</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Lear Siegler Inc. Corp. Through KDL Kuwait</td>
+                                <td>Senior Heavy Equipment Mechanic</td>
+                                <td>2 Years</td>
+                                <td>Oct 2007</td>
+                                <td>Aug 2009</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>ITT Industries, Kuwait, Through KDL Kuwait</td>
+                                <td>Junior Heavy Equipment Mechanic for US Army Project, Kuwait</td>
+                                <td>1 Year</td>
+                                <td>May 2006</td>
+                                <td>May 2007</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>AGS/AECOM, Kuwait Through KDL Kuwait</td>
+                                <td>Junior Wheeled Vehicle Mechanic</td>
+                                <td>8 Months</td>
+                                <td>Sep 2005</td>
+                                <td>Apr 2006</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>MAR Auto Garage, India</td>
+                                <td>Automobile Mechanic of Diesel and Petrol Cars</td>
+                                <td>3 Years</td>
+                                <td>2002</td>
+                                <td>2005</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Falcon Auto Services, Oman</td>
+                                <td>Automobile Mechanic of Petrol Cars</td>
+                                <td>5 Years</td>
+                                <td>1997</td>
+                                <td>2002</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Job Responsibilities Section -->
+            <section class="section">
+                <h2 class="section-title">Job Responsibilities</h2>
+                
+                <div class="responsibility-card">
+                    <div class="job-title">Heavy Equipment Mechanic (2018 to Till Date in APS-5 Project Kuwait)</div>
+                    <ul class="responsibility-list">
+                        <li>Repairing and maintenance of tactical vehicles, heavy equipment vehicles and engineering vehicles.</li>
+                    </ul>
+                </div>
+
+                <div class="responsibility-card">
+                    <div class="job-title">Mechanic Supervisor (2016-2018)</div>
+                    <ul class="responsibility-list">
+                        <li>Responsible of the works under my groups of employees.</li>
+                        <li>Making good relationships with all our customers.</li>
+                        <li>Making all documents like job cards opening and closing of related jobs.</li>
+                        <li>Making final inspections of repaired vehicles and gives to the customers.</li>
+                        <li>Manage all employees in my group.</li>
+                    </ul>
+                </div>
+
+                <div class="responsibility-card">
+                    <div class="job-title">Heavy Equipment Mechanic (2011 to Feb-2016)</div>
+                    <ul class="responsibility-list">
+                        <li>Repair and replace damaged or worn parts of Fork Light Sets, Generators and Mercedes Benz Truck with Trailer.</li>
+                        <li>Diagnose faults or malfunctions to determine required repairs, using engine diagnostic equipment such as computerized test equipment and calibration devices.</li>
+                        <li>Clean, lubricate, and perform other routine maintenance work on equipment and vehicles.</li>
+                        <li>Operate and inspect machines diagnose defects.</li>
+                    </ul>
+                </div>
+
+                <div class="responsibility-card">
+                    <div class="job-title">Senior Heavy Equipment Mechanic (2007 to 2009)</div>
+                    <ul class="responsibility-list">
+                        <li>Working on HMMWV Group Family Vehicles and ASV's.</li>
+                        <li>Rules and interpret electrical and hydraulic schematic wiring diagrams.</li>
+                        <li>Self Motivates and detail oriented with a proven ability to build and foster strong relationship.</li>
+                        <li>Possess excellent communication skill.</li>
+                        <li>Utilized diagnostic equipment and special tools to troubleshoot and repair equipment.</li>
+                        <li>Fix or replace 0 GPK Modification systems.</li>
+                        <li>Inspect the Vehicles and rectify the faults.</li>
+                    </ul>
+                </div>
+
+                <div class="responsibility-card">
+                    <div class="job-title">Junior Mobile Equipment Mechanic (2006 to 2007)</div>
+                    <ul class="responsibility-list">
+                        <li>Completely refurbished all models of HMMWV, including M1114, M1025, M1026 and so forth.</li>
+                        <li>Replaced many components such as Engines, Transmission, Transfer differentials frame cross members and fuel tanks.</li>
+                        <li>Performed MWO upgrades such as up armoring, installing heavy duty suspension kits, upgrade gunners turrets.</li>
+                        <li>Performed electrical diagnosis and repair including replacing complete wiring harness.</li>
+                    </ul>
+                </div>
+
+                <div class="responsibility-card">
+                    <div class="job-title">Automobile Mechanic in India</div>
+                    <ul class="responsibility-list">
+                        <li>Repair and Replace of damaged or worn parts of Ambassador Cars, Jeep and Fiat.</li>
+                    </ul>
+                </div>
+
+                <div class="responsibility-card">
+                    <div class="job-title">Automobile Mechanic in Oman</div>
+                    <ul class="responsibility-list">
+                        <li>Worked as automobile mechanic of Japan and German Petrol Cars.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="section">
+                <h2 class="section-title">Educational and Technical Qualification</h2>
+                <div class="education-table-container">
+                    <table class="qualification-table">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Course</th>
+                                <th>Board/University</th>
+                                <th>Year of Pass</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>S.S.L.C</td>
+                                <td>Kerala Education Board</td>
+                                <td>1986</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Pre Degree</td>
+                                <td>Calicut University</td>
+                                <td>1989</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>I.T.I</td>
+                                <td>National Technical Board</td>
+                                <td>1993</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="licenses-box">
+                    <h3>Licenses</h3>
+                    <ul class="responsibility-list">
+                        <li>Indian: 15-04-21 to 04-04-31</li>
+                        <li>US Army Vehicle in Camp Arifjan: 03-04-23 to 03-04-28</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Certificates Section -->
+            <section class="section">
+                <h2 class="section-title">Certificate and Achievements</h2>
+                <ul class="certificates-list">
+                    <li>Appreciation And Experience Certificates From General Dynamic Information Technology Ltd Kuwait.</li>
+                    <li>Experience Certificate from LSI Corporation, ITT Kuwait, ASG AECOM and KDL Kuwait.</li>
+                </ul>
+            </section>
+
+            <!-- Personal Details Section -->
+            <section class="section">
+                <h2 class="section-title">Personal Details</h2>
+                <div class="personal-details-grid">
+                    <div class="detail-item">
+                        <span class="detail-label">Name</span>
+                        <span class="detail-value">M.A DENNY</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Father's Name</span>
+                        <span class="detail-value">Anthony</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Date of Birth</span>
+                        <span class="detail-value">30-05-1971</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Sex</span>
+                        <span class="detail-value">Male</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Marital Status</span>
+                        <span class="detail-value">Married</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Nationality</span>
+                        <span class="detail-value">Indian</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Passport No.</span>
+                        <span class="detail-value">V-5167791</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Date of Issue</span>
+                        <span class="detail-value">29-03-2022</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Date of Expiry</span>
+                        <span class="detail-value">28-03-2032</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Place of Issue</span>
+                        <span class="detail-value">Kuwait</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Religion</span>
+                        <span class="detail-value">Christian</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Languages Known</span>
+                        <span class="detail-value">English, Hindi, Malayalam and Arabic</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Declaration Section -->
+            <section class="section">
+                <div class="declaration-box">
+                    <p>I hereby declare that the above all information are true and correct to the best of my knowledge and belief.</p>
+                    <div class="signature-section">
+                        <div class="signature-item">
+                            <strong>Place:</strong> Kuwait
+                        </div>
+                        
+                        <div class="signature-item">
+                            <strong>Name:</strong> M.A DENNY
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
